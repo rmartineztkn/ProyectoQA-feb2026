@@ -1,0 +1,1034 @@
+[
+    {
+        "id": "",
+        "nombre": "Aatrox",
+        "damage": 60,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Toplaner de sustain masivo y control de masas en área"
+    },
+    {
+        "id": "",
+        "nombre": "Ahri",
+        "damage": 53,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Midlaner asesina con alta movilidad y encanto (Charm)"
+    },
+    {
+        "id": "",
+        "nombre": "Akali",
+        "damage": 64,
+        "tipo": "Mixto",
+        "posicion": "Asesino",
+        "descripcion": "Asesina de energía con sigilo (humo) y alta ejecución"
+    },
+    {
+        "id": "",
+        "nombre": "Akshan",
+        "damage": 52,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Midlaner/Tirador con camuflaje y resurrección de aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Alistar",
+        "damage": 61,
+        "tipo": "Mixto",
+        "posicion": "Tanque",
+        "descripcion": "Soporte tanque con iniciación fuerte y gran resistencia"
+    },
+    {
+        "id": "",
+        "nombre": "Amumu",
+        "damage": 60,
+        "tipo": "AP",
+        "posicion": "Tanque",
+        "descripcion": "Jungla tanque con aturdimiento en área definitivo"
+    },
+    {
+        "id": "",
+        "nombre": "Annie",
+        "damage": 50,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago de burst instantáneo y aturdimiento con oso Tibbers"
+    },
+    {
+        "id": "",
+        "nombre": "Ashe",
+        "damage": 59,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de utilidad, ralentización constante e iniciación global"
+    },
+    {
+        "id": "",
+        "nombre": "Aurelion Sol",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago de escalado infinito y control de zona estelar"
+    },
+    {
+        "id": "",
+        "nombre": "Blitzcrank",
+        "damage": 63,
+        "tipo": "Mixto",
+        "posicion": "Tanque",
+        "descripcion": "Soporte de 'pick' capaz de atraer enemigos con su gancho"
+    },
+    {
+        "id": "",
+        "nombre": "Brand",
+        "damage": 54,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago de daño en área masivo y quemadura por porcentaje de vida"
+    },
+    {
+        "id": "",
+        "nombre": "Braum",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tanque",
+        "descripcion": "Soporte protector con escudo bloqueador de proyectiles"
+    },
+    {
+        "id": "",
+        "nombre": "Caitlyn",
+        "damage": 54,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de asedio con el mayor rango base y trampas de control"
+    },
+    {
+        "id": "",
+        "nombre": "Camille",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Toplaner duelista de alta movilidad y aislamiento de objetivos"
+    },
+    {
+        "id": "",
+        "nombre": "Corki",
+        "damage": 58,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "Tirador mágico de pokeo constante y paquete explosivo"
+    },
+    {
+        "id": "",
+        "nombre": "Darius",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Coloso de línea que abusa del sangrado para ejecutar rivales"
+    },
+    {
+        "id": "",
+        "nombre": "Diana",
+        "damage": 57,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Jungla/Mid diver capaz de entrar y explotar en área"
+    },
+    {
+        "id": "",
+        "nombre": "Dr. Mundo",
+        "damage": 61,
+        "tipo": "AD",
+        "posicion": "Tanque",
+        "descripcion": "Tanque de regeneración de vida extrema imposible de matar"
+    },
+    {
+        "id": "",
+        "nombre": "Draven",
+        "damage": 66,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de early game con daño brutal mediante hachas giratorias"
+    },
+    {
+        "id": "",
+        "nombre": "Ekko",
+        "damage": 61,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Asesino de escaramuzas con una 'segunda oportunidad' temporal"
+    },
+    {
+        "id": "",
+        "nombre": "Evelynn",
+        "damage": 58,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Jungla de camuflaje permanente experta en eliminar objetivos aislados"
+    },
+    {
+        "id": "",
+        "nombre": "Ezreal",
+        "damage": 55,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "ADC de pokeo seguro y movilidad con desplazamiento arcano"
+    },
+    {
+        "id": "",
+        "nombre": "Fiora",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Gran duelista de splitpush que golpea puntos vitales"
+    },
+    {
+        "id": "",
+        "nombre": "Fizz",
+        "damage": 62,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Asesino escurridizo inmune a objetivos con su salto"
+    },
+    {
+        "id": "",
+        "nombre": "Galio",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Tanque",
+        "descripcion": "Tanque antimagia con entrada heroica global para proteger aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Garen",
+        "damage": 66,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Coloso simple y resistente con silencio y ejecución verdadera"
+    },
+    {
+        "id": "",
+        "nombre": "Gragas",
+        "damage": 61,
+        "tipo": "AP",
+        "posicion": "Luchador",
+        "descripcion": "Jungla de disrupción capaz de separar equipos con su barril"
+    },
+    {
+        "id": "",
+        "nombre": "Graves",
+        "damage": 65,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Jungla tirador resistente de corto alcance y daño explosivo"
+    },
+    {
+        "id": "",
+        "nombre": "Gwen",
+        "damage": 58,
+        "tipo": "Mixto",
+        "posicion": "Luchador",
+        "descripcion": "Toplaner AP inmune a daño lejano, excelente contra tanques"
+    },
+    {
+        "id": "",
+        "nombre": "Hecarim",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla veloz que convierte velocidad de movimiento en daño"
+    },
+    {
+        "id": "",
+        "nombre": "Irelia",
+        "damage": 62,
+        "tipo": "Mixto",
+        "posicion": "Luchador",
+        "descripcion": "Duelista de alta mecánica que salta entre menearse y resetear habilidades"
+    },
+    {
+        "id": "",
+        "nombre": "Janna",
+        "damage": 49,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Soporte de desenganche (disengage) y escudos protectores"
+    },
+    {
+        "id": "",
+        "nombre": "Jarvan IV",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla iniciador que atrapa enemigos en un cataclismo de terreno"
+    },
+    {
+        "id": "",
+        "nombre": "Jax",
+        "damage": 66,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Hipercarry de late game duelista que esquiva ataques básicos"
+    },
+    {
+        "id": "",
+        "nombre": "Jhin",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Francotirador de utilidad con balas contadas y daño crítico masivo"
+    },
+    {
+        "id": "",
+        "nombre": "Jinx",
+        "damage": 61,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Hipercarry de teamfighting que se excita al conseguir derribos"
+    },
+    {
+        "id": "",
+        "nombre": "Kai'Sa",
+        "damage": 57,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "ADC asesina versátil que evoluciona sus habilidades según su build"
+    },
+    {
+        "id": "",
+        "nombre": "Katarina",
+        "damage": 54,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Asesina de teamfight con reseteos de habilidades al matar"
+    },
+    {
+        "id": "",
+        "nombre": "Kayle",
+        "damage": 50,
+        "tipo": "Mixto",
+        "posicion": "Luchador",
+        "descripcion": "Hipercarry de escalado que se vuelve rango e invencible en late game"
+    },
+    {
+        "id": "",
+        "nombre": "Kayn",
+        "damage": 65,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla versátil que elige entre asesino de sombras o darkin (sustain)"
+    },
+    {
+        "id": "",
+        "nombre": "Kha'Zix",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Asesino jungla que evoluciona y elimina objetivos aislados fácilmente"
+    },
+    {
+        "id": "",
+        "nombre": "Kog'Maw",
+        "damage": 61,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "Artillería de vidrio que derrite tanques con daño por vida máxima"
+    },
+    {
+        "id": "",
+        "nombre": "Lee Sin",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla de early game con alta movilidad y capacidad de playmaking"
+    },
+    {
+        "id": "",
+        "nombre": "Leona",
+        "damage": 58,
+        "tipo": "Mixto",
+        "posicion": "Tanque",
+        "descripcion": "Soporte de engage puro con aturdimientos encadenados (CC chain)"
+    },
+    {
+        "id": "",
+        "nombre": "Lucian",
+        "damage": 59,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de corto alcance y alta movilidad, fuerte en duelos tempranos"
+    },
+    {
+        "id": "",
+        "nombre": "Lulu",
+        "damage": 48,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Encantadora que buffea a un carry y evita asesinatos con polimorfia"
+    },
+    {
+        "id": "",
+        "nombre": "Lux",
+        "damage": 50,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Maga de artillería con aturdimiento y láser de largo alcance"
+    },
+    {
+        "id": "",
+        "nombre": "Malphite",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tanque",
+        "descripcion": "Tanque anti-AD con la mejor iniciación de equipo del juego"
+    },
+    {
+        "id": "",
+        "nombre": "Master Yi",
+        "damage": 54,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Hipercarry en la jungla, velocidad de ataque y daño por segundo"
+    },
+    {
+        "id": "",
+        "nombre": "Miss Fortune",
+        "damage": 58,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de wombo combo con una definitiva devastadora en área"
+    },
+    {
+        "id": "",
+        "nombre": "Nasus",
+        "damage": 60,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Juggernaut de escalado infinito que stackea daño en su Q"
+    },
+    {
+        "id": "",
+        "nombre": "Nautilus",
+        "damage": 62,
+        "tipo": "Mixto",
+        "posicion": "Tanque",
+        "descripcion": "Tanque con más CC del juego, excelente para atrapar y bloquear"
+    },
+    {
+        "id": "",
+        "nombre": "Olaf",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Berserker imparable inmune al control de masas en su definitiva"
+    },
+    {
+        "id": "",
+        "nombre": "Orianna",
+        "damage": 54,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Maga de control que maneja una bola para zonear y proteger"
+    },
+    {
+        "id": "",
+        "nombre": "Pantheon",
+        "damage": 58,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Diver de early game con stun puntual y presencia global"
+    },
+    {
+        "id": "",
+        "nombre": "Pyke",
+        "damage": 53,
+        "tipo": "Mixto",
+        "posicion": "Asesino",
+        "descripcion": "Soporte asesino que comparte oro al ejecutar enemigos"
+    },
+    {
+        "id": "",
+        "nombre": "Rakan",
+        "damage": 51,
+        "tipo": "Mixto",
+        "posicion": "Apoyo",
+        "descripcion": "Soporte iniciador de altísima movilidad, entra y sale del combate"
+    },
+    {
+        "id": "",
+        "nombre": "Renekton",
+        "damage": 66,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Dominante de línea en top, fuerte en early con sustain y stun"
+    },
+    {
+        "id": "",
+        "nombre": "Rengar",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Cazador que salta desde arbustos para oneshotear carries"
+    },
+    {
+        "id": "",
+        "nombre": "Riven",
+        "damage": 61,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Duelista mecánica de combos rápidos y alta movilidad"
+    },
+    {
+        "id": "",
+        "nombre": "Samira",
+        "damage": 60,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC estilo asesino que necesita entrar en la pelea para su definitiva"
+    },
+    {
+        "id": "",
+        "nombre": "Senna",
+        "damage": 52,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "Soporte tiradora de escalado infinito, cura y daña a distancia"
+    },
+    {
+        "id": "",
+        "nombre": "Sett",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Peleador que aguanta mucho daño y lo devuelve con un golpe verdadero"
+    },
+    {
+        "id": "",
+        "nombre": "Shen",
+        "damage": 59,
+        "tipo": "Mixto",
+        "posicion": "Tanque",
+        "descripcion": "Tanque de splitpush con teletransporte protector a aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Sion",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tanque",
+        "descripcion": "Tanque de escalado de vida infinito que revive temporalmente al morir"
+    },
+    {
+        "id": "",
+        "nombre": "Sona",
+        "damage": 46,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Encantadora de auras de spam de habilidades y stun en área"
+    },
+    {
+        "id": "",
+        "nombre": "Soraka",
+        "damage": 48,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Ambulancia viviente, sanadora global que sacrifica su vida"
+    },
+    {
+        "id": "",
+        "nombre": "Teemo",
+        "damage": 54,
+        "tipo": "Mixto",
+        "posicion": "Tirador",
+        "descripcion": "Lane bully especialista en control de mapa con setas invisibles"
+    },
+    {
+        "id": "",
+        "nombre": "Thresh",
+        "damage": 50,
+        "tipo": "Mixto",
+        "posicion": "Apoyo",
+        "descripcion": "Playmaker versátil con gancho y linterna para salvar aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Tryndamere",
+        "damage": 65,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Splitpusher inmortal por 5 segundos gracias a su definitiva"
+    },
+    {
+        "id": "",
+        "nombre": "Twisted Fate",
+        "damage": 52,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Midlaner de control con aturdimiento y teletransporte global"
+    },
+    {
+        "id": "",
+        "nombre": "Varus",
+        "damage": 57,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Tirador de pokeo o DPS con una definitiva de atrapado en cadena"
+    },
+    {
+        "id": "",
+        "nombre": "Vayne",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Mata-tanques por excelencia con daño verdadero y movilidad"
+    },
+    {
+        "id": "",
+        "nombre": "Vi",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla de lockdown, excelente para atrapar un objetivo y romper armadura"
+    },
+    {
+        "id": "",
+        "nombre": "Viego",
+        "damage": 60,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla carry que roba los cuerpos y habilidades de los enemigos muertos"
+    },
+    {
+        "id": "",
+        "nombre": "Warwick",
+        "damage": 58,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Jungla de sustain que caza a enemigos con baja vida"
+    },
+    {
+        "id": "",
+        "nombre": "Wukong",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Peleador de teamfight con clones y doble levantamiento en área"
+    },
+    {
+        "id": "",
+        "nombre": "Xayah",
+        "damage": 56,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de autoprotección que deja plumas para atrapar enemigos"
+    },
+    {
+        "id": "",
+        "nombre": "Xin Zhao",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Duelista de early game fuerte, ideal para invadir y pegar pegado"
+    },
+    {
+        "id": "",
+        "nombre": "Yasuo",
+        "damage": 65,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Carry melé de alta movilidad, muro de viento y críticos"
+    },
+    {
+        "id": "",
+        "nombre": "Yone",
+        "damage": 60,
+        "tipo": "Mixto",
+        "posicion": "Asesino",
+        "descripcion": "Asesino de escaramuzas con proyección espiritual y daño híbrido"
+    },
+    {
+        "id": "",
+        "nombre": "Yuumi",
+        "damage": 45,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Encantadora intargeteable que se adhiere a aliados para curar"
+    },
+    {
+        "id": "",
+        "nombre": "Zed",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Ninja maestro de las sombras con gran capacidad de outplay y burst"
+    },
+    {
+        "id": "",
+        "nombre": "Ziggs",
+        "damage": 50,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago de asedio experto en destruir torres y zonear con bombas"
+    },
+    {
+        "id": "",
+        "nombre": "Zoe",
+        "damage": 47,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago de pokeo explosivo capaz de dormir enemigos y robar hechizos"
+    },
+    {
+        "id": "",
+        "nombre": "Shyvana",
+        "damage": 62,
+        "tipo": "Mixto",
+        "posicion": "Luchador",
+        "descripcion": "Jungla dragón con gran daño híbrido y transformación"
+    },
+    {
+        "id": "",
+        "nombre": "Bard",
+        "damage": 52,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Soporte errante que recolecta campanas y viaja por portales"
+    },
+    {
+        "id": "",
+        "nombre": "Fiddlesticks",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Espantapájaros terrorífico que drena vida y embosca"
+    },
+    {
+        "id": "",
+        "nombre": "Gnar",
+        "damage": 59,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Pequeño yoldel que se transforma en una bestia gigante"
+    },
+    {
+        "id": "",
+        "nombre": "Heimerdinger",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Genio científico que coloca torretas defensivas"
+    },
+    {
+        "id": "",
+        "nombre": "Jayce",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Luchador",
+        "descripcion": "Héroe de Piltover que cambia entre martillo y cañón"
+    },
+    {
+        "id": "",
+        "nombre": "Kalista",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Espíritu de venganza que salta con cada ataque básico"
+    },
+    {
+        "id": "",
+        "nombre": "Karma",
+        "damage": 51,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Líder espiritual de Jonia con gran utilidad y mantra"
+    },
+    {
+        "id": "",
+        "nombre": "Kassadin",
+        "damage": 57,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Caminante del vacío con movilidad extrema al nivel 6"
+    },
+    {
+        "id": "",
+        "nombre": "Kennen",
+        "damage": 52,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Ninja eléctrico de gran impacto en peleas de equipo"
+    },
+    {
+        "id": "",
+        "nombre": "Kindred",
+        "damage": 58,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "La muerte dual, un tirador diseñado para la jungla"
+    },
+    {
+        "id": "",
+        "nombre": "Lillia",
+        "damage": 56,
+        "tipo": "AP",
+        "posicion": "Luchador",
+        "descripcion": "Fawn veloz que duerme enemigos con su polvo de sueños"
+    },
+    {
+        "id": "",
+        "nombre": "Lissandra",
+        "damage": 53,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Bruja de hielo con gran control de masas y autoseguridad"
+    },
+    {
+        "id": "",
+        "nombre": "Maokai",
+        "damage": 58,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "Treant retorcido que atrapa enemigos con sus raíces"
+    },
+    {
+        "id": "",
+        "nombre": "Milio",
+        "damage": 45,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Joven maestro del fuego curativo que purifica aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Mordekaiser",
+        "damage": 61,
+        "tipo": "AP",
+        "posicion": "Luchador",
+        "descripcion": "Señor del metal que lleva a sus rivales al reino de la muerte"
+    },
+    {
+        "id": "",
+        "nombre": "Morgana",
+        "damage": 54,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Ángel caído con el aturdimiento más largo y escudo negro"
+    },
+    {
+        "id": "",
+        "nombre": "Nami",
+        "damage": 51,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Invocadora de mareas que potencia y cura a su equipo"
+    },
+    {
+        "id": "",
+        "nombre": "Nidalee",
+        "damage": 58,
+        "tipo": "AP",
+        "posicion": "Asesino",
+        "descripcion": "Cazadora salvaje que cambia entre humana y puma"
+    },
+    {
+        "id": "",
+        "nombre": "Nilah",
+        "damage": 63,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Guerrera de la alegría que lucha cuerpo a cuerpo con látigos"
+    },
+    {
+        "id": "",
+        "nombre": "Nocturne",
+        "damage": 64,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Pesadilla viviente que oscurece el mapa para cazar"
+    },
+    {
+        "id": "",
+        "nombre": "Norra",
+        "damage": 48,
+        "tipo": "AP",
+        "posicion": "Apoyo",
+        "descripcion": "Yordle dimensional exclusiva de Wild Rift que invoca portales"
+    },
+    {
+        "id": "",
+        "nombre": "Nunu y Willump",
+        "damage": 57,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "Niño y yeti que ruedan bolas de nieve gigantes"
+    },
+    {
+        "id": "",
+        "nombre": "Ornn",
+        "damage": 60,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "El forjador de la montaña que mejora objetos aliados"
+    },
+    {
+        "id": "",
+        "nombre": "Poppy",
+        "damage": 61,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "Yordle con un martillo gigante experta en frenar cargas"
+    },
+    {
+        "id": "",
+        "nombre": "Rammus",
+        "damage": 55,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "Armadillo veloz experto en reflejar daño físico"
+    },
+    {
+        "id": "",
+        "nombre": "Rell",
+        "damage": 51,
+        "tipo": "Tanque",
+        "posicion": "Tanque",
+        "descripcion": "Dama de hierro que manipula metal y monta un corcel"
+    },
+    {
+        "id": "",
+        "nombre": "Rumble",
+        "damage": 60,
+        "tipo": "AP",
+        "posicion": "Luchador",
+        "descripcion": "Yordle en un mecha que lanza fuego y misiles"
+    },
+    {
+        "id": "",
+        "nombre": "Ryze",
+        "damage": 54,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Mago rúnico de combos rápidos y teletransporte masivo"
+    },
+    {
+        "id": "",
+        "nombre": "Seraphine",
+        "damage": 50,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Cantante pop que encanta enemigos con sus canciones"
+    },
+    {
+        "id": "",
+        "nombre": "Singed",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Tanque",
+        "descripcion": "Químico loco que deja un rastro de veneno tras de sí"
+    },
+    {
+        "id": "",
+        "nombre": "Sivir",
+        "damage": 59,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "ADC de asedio con gran limpieza de oleadas y velocidad"
+    },
+    {
+        "id": "",
+        "nombre": "Smolder",
+        "damage": 57,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Pequeño dragón que exhala fuego y llama a su madre"
+    },
+    {
+        "id": "",
+        "nombre": "Swain",
+        "damage": 56,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Gran estratega de Noxus que drena almas para fortalecerse"
+    },
+    {
+        "id": "",
+        "nombre": "Syndra",
+        "damage": 62,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Soberana oscura que manipula esferas de energía pura"
+    },
+    {
+        "id": "",
+        "nombre": "Talon",
+        "damage": 65,
+        "tipo": "AD",
+        "posicion": "Asesino",
+        "descripcion": "Asesino de parkour que salta muros para ejecutar blancos"
+    },
+    {
+        "id": "",
+        "nombre": "Tristana",
+        "damage": 61,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Yordle con cañón que salta y pone bombas explosivas"
+    },
+    {
+        "id": "",
+        "nombre": "Twitch",
+        "damage": 59,
+        "tipo": "AD",
+        "posicion": "Tirador",
+        "descripcion": "Rata de la peste que ataca desde el sigilo con veneno"
+    },
+    {
+        "id": "",
+        "nombre": "Urgot",
+        "damage": 62,
+        "tipo": "AD",
+        "posicion": "Tanque",
+        "descripcion": "Cyborg con piernas de cañón que tritura a sus enemigos"
+    },
+    {
+        "id": "",
+        "nombre": "Veigar",
+        "damage": 48,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Pequeño mago de destrucción masiva con escalado infinito"
+    },
+    {
+        "id": "",
+        "nombre": "VelKoz",
+        "damage": 58,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Ser del vacío que desintegra enemigos con geometría láser"
+    },
+    {
+        "id": "",
+        "nombre": "Vex",
+        "damage": 60,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Yordle sombría que castiga la movilidad enemiga"
+    },
+    {
+        "id": "",
+        "nombre": "Vladimir",
+        "damage": 55,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Hemomante que sacrifica vida para curarse y ser intocable"
+    },
+    {
+        "id": "",
+        "nombre": "Zyra",
+        "damage": 56,
+        "tipo": "AP",
+        "posicion": "Mago",
+        "descripcion": "Dama de las espinas que invoca plantas para atacar"
+    }
+]

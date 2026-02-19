@@ -1,0 +1,22 @@
+{
+  "name": "proyectoqa-feb2026",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Ronny Martinez",
+  "license": "ISC",
+  "description": "proyecto para aprender temas de BFF + docker y mas, con temas de wildrift para hacerlo diveritdo",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
+    "puppeteer": "^24.3.0"
+  }
+}

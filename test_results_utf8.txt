@@ -1,0 +1,128 @@
+﻿
+> proyectoqa-feb2026@1.0.0 test
+> jest tests/functional_flow.test.js
+
+  console.log
+    
+    ­ƒÜÇ INICIANDO PRUEBA EN MODO: ­ƒÉó LENTO (Visual)
+
+      at Object.log (tests/functional_flow.test.js:18:17)
+
+  console.log
+    Resultado B├║squeda ID: No se encontraron campeones.
+
+      at Object.log (tests/functional_flow.test.js:65:21)
+
+  console.log
+    Resultado B├║squeda Nombre: Shyvana
+
+      at Object.log (tests/functional_flow.test.js:75:21)
+
+  console.log
+    Tipos encontrados: 21 registros
+
+      at Object.log (tests/functional_flow.test.js:85:21)
+
+  console.log
+    Posiciones encontradas: 16 registros
+
+      at Object.log (tests/functional_flow.test.js:95:21)
+
+  console.log
+    
+    ========================================
+
+      at Object.log (tests/functional_flow.test.js:33:17)
+
+  console.log
+    ­ƒôè REPORTE DE TIEMPO - MODO LENTO
+
+      at Object.log (tests/functional_flow.test.js:34:17)
+
+  console.log
+    ÔÅ▒´©Å Duraci├│n Total: 127.15 segundos
+
+      at Object.log (tests/functional_flow.test.js:35:17)
+
+  console.log
+    ========================================
+
+      at Object.log (tests/functional_flow.test.js:36:17)
+
+npm : FAIL tests/functional_flow.test.js 
+(128.523 s)
+At line:1 char:25
++ ... EED='slow'; npm test 
+tests/functional_flow.test.js > 
+test_results.txt ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified 
+   : (FAIL tests/func....js (128.523 s):S  
+  tring) [], RemoteException
+    + FullyQualifiedErrorId : NativeComman 
+   dError
+ 
+  Suite de Pruebas Funcionales Completas - 
+Wild Rift QA
+    1. Pruebas de B├║squeda Individuales
+      ├ù B├║squeda por ID (Exacta) (8172 
+ms)
+      ÔêÜ B├║squeda por NOMBRE 
+(Parcial/LIKE) (8198 ms)
+      ÔêÜ B├║squeda por TIPO (Selector) 
+(7671 ms)
+      ÔêÜ B├║squeda por POSICI├ôN 
+(Selector) (7265 ms)
+    2. Ciclo de Vida del Campe├│n (CRUD)
+      ÔêÜ Paso A: Agregar nuevo campe├│n 
+(34868 ms)
+      ÔêÜ Paso B: Editar el campe├│n 
+creado (39247 ms)
+      ÔêÜ Paso C: Eliminar el campe├│n 
+editado (19800 ms)
+
+  ÔùÅ Suite de Pruebas Funcionales 
+Completas - Wild Rift QA ÔÇ║ 1. Pruebas de 
+B├║squeda Individuales ÔÇ║ B├║squeda por 
+ID (Exacta)
+
+    expect(received).toBe(expected) // 
+Object.is equality
+
+    Expected: "#1"
+    Received: "No se encontraron 
+campeones."
+
+    [0m [90m 64 |[39m             
+[36mconst[39m idResult [33m=[39m 
+[36mawait[39m 
+page[33m.[39m$eval([32m'table tbody tr 
+td:first-child'[39m[33m,[39m el 
+[33m=>[39m el[33m.[39mtextContent[33m.
+[39mtrim())[33m;[39m
+     [90m 65 |[39m             
+console[33m.[39mlog([32m`Resultado 
+B├║squeda ID: ${idResult}`[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 66 |[39m    
+         expect(idResult)[33m.[39mtoBe([
+32m'#1'[39m)[33m;[39m
+     [90m    |[39m                       
+       [31m[1m^[22m[39m
+     [90m 67 |[39m         })[33m;[39m
+     [90m 68 |[39m
+     [90m 69 |[39m         
+test([32m'B├║squeda por NOMBRE 
+(Parcial/LIKE)'[39m[33m,[39m 
+[36masync[39m () [33m=>[39m {[0m
+
+      at Object.toBe 
+(tests/functional_flow.test.js:66:30)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 6 passed, 7 total
+Snapshots:   0 total
+Time:        128.633 s, estimated 131 s
+Ran all test suites matching 
+tests/functional_flow.test.js.
+

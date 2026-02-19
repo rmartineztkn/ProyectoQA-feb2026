@@ -1,0 +1,38 @@
+name: QA CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start Application Server
+        run: node index.js &
+        env:
+          NODE_ENV: test
+
+      - name: Wait for Server
+        run: npx wait-on http://127.0.0.1:3000/champions --timeout 30000
+
+      - name: Run Tests (Headless Mode)
+        run: npm test
+        env:
+          HEADLESS: true
+          TEST_SPEED: fast
+          NODE_ENV: test
