@@ -45,13 +45,17 @@ describe('Wild Rift App E2E', () => {
     test('CP3: Debe funcionar la búsqueda parcial (LIKE)', async () => {
         await page.goto('http://127.0.0.1:3000/champions');
         await page.type('input[name="searchNombre"]', 'Deme');
-        await page.click('.btn-search');
+
+        // Al hacer clic en .btn-search se recarga la página. 
+        // Debemos esperar a que la navegación termine para no perder el contexto.
+        await Promise.all([
+            page.waitForNavigation({ waitUntil: 'networkidle0' }),
+            page.click('.btn-search')
+        ]);
 
         await page.waitForSelector('table tbody tr');
         const names = await page.$$eval('table tbody tr td:nth-child(3)', tds => tds.map(td => td.textContent.trim()));
 
-        // Verificamos que al menos uno contenga "Deme" (como Shyvana o Garen de Demecia si existiera)
-        // O simplemente verificamos que los resultados sean coherentes
         names.forEach(name => {
             expect(name.toLowerCase()).toContain('deme');
         });
