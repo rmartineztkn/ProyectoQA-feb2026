@@ -12,6 +12,7 @@ let collection = null;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 async function connectToDB() {
     try {
@@ -150,6 +151,17 @@ app.get('/champions', async (req, res) => {
                     text-transform: uppercase;
                     letter-spacing: 2px;
                     font-size: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
+                }
+                .main-logo {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    filter: drop-shadow(0 0 10px rgba(200, 155, 60, 0.5));
                 }
                 .panel { 
                     background: rgba(1, 10, 19, 0.8); 
@@ -266,7 +278,10 @@ app.get('/champions', async (req, res) => {
         </head>
         <body>
             <div class="container">
-                <h1>Proyecto Campeones de Wild Rift</h1>
+                <h1>
+                    <img src="/logo.png" alt="Wild Rift Logo" class="main-logo">
+                    Proyecto Campeones de Wild Rift
+                </h1>
                 <div class="panel">
                     <h2 class="panel-header">
                         🔍 Buscar Campeones
