@@ -126,3 +126,147 @@ Time:        128.633 s, estimated 131 s
 Ran all test suites matching 
 tests/functional_flow.test.js.
 
+
+========================================
+LINT RUN: 12/5/2026, 2:41:25 p.m.
+STATUS: FAILED ❌
+----------------------------------------
+[0m
+[4mC:\Users\Administrator\Documents\ProyectoQA-feb2026\scripts\lint-logger.js[24m
+  [2m9:5[22m  [31merror[39m  The value assigned to 'output' is not used in subsequent statements  [2mno-useless-assignment[22m
+
+[31m[1m✖ 1 problem (1 error, 0 warnings)[22m[39m
+[0m
+
+========================================
+
+========================================
+LINT RUN: 12/5/2026, 2:41:36 p.m.
+STATUS: PASSED ✅
+----------------------------------------
+
+========================================
+
+========================================
+SECURITY SCAN: 12/5/2026, 3:30:41 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+Vulnerable dependencies found (High/Critical). Run 'npm audit' for details.
+========================================
+
+========================================
+SECURITY SCAN: 12/5/2026, 3:31:57 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+Vulnerable dependencies found (High/Critical). Run 'npm audit' for details.
+========================================
+
+========================================
+SECURITY SCAN: 12/5/2026, 3:35:16 p.m.
+STATUS: PASSED ✅
+----------------------------------------
+No critical secrets or high vulnerabilities found.
+========================================
+
+========================================
+ACCESSIBILITY SCAN (A11y): 12/5/2026, 3:57:02 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+[CRITICAL] Images must have alternate text
+   - ID: image-alt
+   - Elementos afectados: 129
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/image-alt?application=axeAPI
+
+[CRITICAL] Form elements must have labels
+   - ID: label
+   - Elementos afectados: 2
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/label?application=axeAPI
+
+[MODERATE] Document should have one main landmark
+   - ID: landmark-one-main
+   - Elementos afectados: 1
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/landmark-one-main?application=axeAPI
+
+[MODERATE] All page content should be contained by landmarks
+   - ID: region
+   - Elementos afectados: 918
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/region?application=axeAPI
+
+[CRITICAL] Select element must have an accessible name
+   - ID: select-name
+   - Elementos afectados: 4
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/select-name?application=axeAPI
+========================================
+
+========================================
+ACCESSIBILITY SCAN (A11y): 12/5/2026, 4:04:09 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+[MODERATE] All page content should be contained by landmarks
+   - ID: region
+   - Elementos afectados: 1
+   - Guía: https://dequeuniversity.com/rules/axe/4.8/region?application=axeAPI
+========================================
+
+========================================
+SCHEMA VALIDATION: 12/5/2026, 4:14:27 p.m.
+STATUS: PASSED ✅
+----------------------------------------
+All project manifests and configurations follow the required schema.
+========================================
+
+========================================
+API & LOAD PULSE CHECK: 12/5/2026, 4:59:18 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+Total Requests: 50
+Success Rate:   100.0% (50/50)
+Total Burst Time: 839 ms
+Avg Latency:    615.38 ms
+Max Latency:    806 ms
+Min Latency:    434 ms
+----------------------------------------
+Potential performance bottleneck detected.
+========================================
+
+========================================
+API & LOAD PULSE CHECK: 12/5/2026, 5:01:15 p.m.
+STATUS: WARNING/FAILED ⚠️
+----------------------------------------
+Total Requests: 100
+Success Rate:   100.0% (100/100)
+Total Burst Time: 1400 ms
+Avg Latency:    1039.58 ms
+Max Latency:    1337 ms
+Min Latency:    736 ms
+----------------------------------------
+Potential performance bottleneck detected.
+========================================
+
+========================================
+API & LOAD PULSE CHECK: 12/5/2026, 5:03:15 p.m.
+STATUS: PASSED ✅
+----------------------------------------
+Total Requests: 100
+Success Rate:   100.0% (100/100)
+Total Burst Time: 1367 ms
+Avg Latency:    1009.73 ms
+Max Latency:    1310 ms
+Min Latency:    469 ms
+----------------------------------------
+Server is stable under light load.
+========================================
+
+========================================
+API & LOAD PULSE CHECK: 12/5/2026, 5:06:06 p.m.
+STATUS: PASSED ✅
+----------------------------------------
+Total Requests: 20
+Success Rate:   100.0% (20/20)
+Total Burst Time: 431 ms
+Avg Latency:    303.45 ms
+Max Latency:    391 ms
+Min Latency:    233 ms
+----------------------------------------
+Server is stable under light load.
+========================================

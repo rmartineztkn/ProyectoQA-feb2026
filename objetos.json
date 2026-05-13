@@ -1,0 +1,1460 @@
+[
+    {
+        "nombre": "Filo Infinito",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+55 Daño de Ataque",
+            "+25% Probabilidad de Golpe Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Filo: Los ataques críticos infligen un 205% de daño en lugar de un 175%.",
+            "activa": "No tiene."
+        },
+        "costo": 3400
+    },
+    {
+        "nombre": "Recolector",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+55 Daño de Ataque",
+            "+25% Probabilidad Crítica",
+            "+10 Letalidad"
+        ],
+        "descripcion": {
+            "pasiva": "Ejecuta enemigos con poca vida.",
+            "activa": "No tiene."
+        },
+        "costo": 3100
+    },
+    {
+        "nombre": "Sanguinaria",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+50 Daño de Ataque",
+            "+15% Vampirismo Físico"
+        ],
+        "descripcion": {
+            "pasiva": "Sediento: +15% de Vampirismo físico.",
+            "activa": "Vínculo Sangriento: Si tienes más del 50% de vida, obtienes 10-15 de DA y 10% de velocidad de ataque."
+        },
+        "costo": 3300
+    },
+    {
+        "nombre": "Huracán de Runaan",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+35% Velocidad de Ataque",
+            "+25% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Dispara proyectiles adicionales.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Bailarín Espectral",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+25% Velocidad de Ataque",
+            "+25% Crítico",
+            "+5% Velocidad Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga velocidad al atacar.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Hoja del Rey Arruinado",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+30 Daño de Ataque",
+            "+30% Velocidad de Ataque",
+            "+10% Vampirismo"
+        ],
+        "descripcion": {
+            "pasiva": "Golpes de Sed: Los ataques infligen daño físico adicional igual al 9% (6% para distancia) de la vida actual del objetivo.",
+            "activa": "Drenaje: Golpear a un campeón con 3 ataques roba un 25% de su velocidad de movimiento durante 2s."
+        },
+        "costo": 3200
+    },
+    {
+        "nombre": "Cuchilla Negra",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+40 Daño de Ataque",
+            "+350 Vida",
+            "+25 Aceleración de Habilidad"
+        ],
+        "descripcion": {
+            "pasiva": "Hendidura: Los ataques físicos reducen la armadura del objetivo un 5% durante 6 s (acumulable hasta 24%).",
+            "activa": "Rabia: Atacar otorga 20 de velocidad de movimiento y los asesinatos otorgan 60 durante 2s."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Fuerza de la Trinidad",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+35 AD",
+            "+300 Vida",
+            "+20 Aceleración",
+            "+30% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Espada Encantada: Tras una habilidad, el siguiente ataque inflige daño adicional igual al 200% del DA básico.",
+            "activa": "Golpe de Gracia: Los ataques otorgan un 5% de DA básico durante 5s (máx. 30%)."
+        },
+        "costo": 3333
+    },
+    {
+        "nombre": "Devorador de Almas",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+55 AD",
+            "+250 Vida",
+            "+25% Crítico",
+            "+8% Vampirismo"
+        ],
+        "descripcion": {
+            "pasiva": "Golpes críticos aumentan vampirismo.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Recordatorio Mortal",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+45 AD",
+            "+25% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Último Suspiro: +30% de penetración de armadura.",
+            "activa": "Heridas Graves: Los ataques físicos aplican un 40% de Heridas Graves durante 3 segundos."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Sombrero Mortal de Rabadon",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+120 Poder de Habilidad"
+        ],
+        "descripcion": {
+            "pasiva": "Exterminio: Aumenta el poder de habilidad un 20% - 45% (según el nivel).",
+            "activa": "No tiene."
+        },
+        "costo": 3400
+    },
+    {
+        "nombre": "Eco de Luden",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+85 AP",
+            "+300 Maná",
+            "+20 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Daño mágico adicional cargado.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Tormento de Liandry",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+75 AP",
+            "+250 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Quemadura basada en vida.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Orbe del Infinito",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+85 AP",
+            "+15 Penetración Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Daño crítico mágico a baja vida.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Diente de Nashor",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+70 AP",
+            "+30% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Daño mágico al golpear.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Bastón del Vacío",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+70 AP"
+        ],
+        "descripcion": {
+            "pasiva": "Penetración mágica porcentual.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Morellonomicón",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+75 AP",
+            "+300 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Afligido: El daño mágico aplica un 40% de Heridas Graves a los campeones durante 3 segundos.",
+            "activa": "Maldición: +15 de Penetración Mágica."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Cristal de Rylai",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+70 AP",
+            "+350 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Ralentiza habilidades.",
+            "activa": "No tiene."
+        },
+        "costo": 2700
+    },
+    {
+        "nombre": "Égida de Fuego Solar",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+500 Vida",
+            "+40 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Inmolar: Inflige 16-30 + 0.8% de Vida adicional como daño mágico por segundo. El daño aumenta un 7% por acumulación (máx. 6) al dañar campeones.",
+            "activa": "Toque Flamígero: Al máximo de cargas, los ataques básicos queman a los enemigos por el daño de Inmolar durante 3s."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Malla de Espinas",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+75 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Espinas: Al recibir un ataque, refleja 20 + 6% de la armadura adicional como daño mágico y aplica 40% de Heridas Graves.",
+            "activa": "No tiene."
+        },
+        "costo": 2700
+    },
+    {
+        "nombre": "Rostro Espiritual",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+350 Vida",
+            "+45 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta curación.",
+            "activa": "No tiene."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Presagio de Randuin",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+400 Vida",
+            "+55 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce daño crítico.",
+            "activa": "Ralentiza enemigos."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Fuerza de la Naturaleza",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+350 Vida",
+            "+50 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce daño mágico recibido.",
+            "activa": "No tiene."
+        },
+        "costo": 2850
+    },
+    {
+        "nombre": "Grebas de Berserker",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+35% Velocidad Ataque",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta velocidad ataque.",
+            "activa": "No tiene."
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Botas Jonias de la Lucidez",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+20 Aceleración",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce enfriamientos.",
+            "activa": "No tiene."
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Botas Blindadas",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+40 Armadura",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce daño físico.",
+            "activa": "No tiene."
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Botas de Mercurio",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+40 Resistencia Mágica",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce control de masas.",
+            "activa": "No tiene."
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Encantamiento Estasis",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activo defensivo"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Invulnerabilidad temporal."
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Encantamiento Protocinturón",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Dash ofensivo"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Desplazamiento hacia adelante."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento Redención",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Curación en área"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Cura aliados."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento Medallón",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Escudo grupal"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Escudo para aliados cercanos."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Daga de Statikk",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+35% Velocidad de Ataque",
+            "+25% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Descarga de rayos al atacar.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Cañón de Fuego Rápido",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+35% Velocidad de Ataque",
+            "+25% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta el rango de ataque cargado.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Espada Fantasma de Youmuu",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+50 AD",
+            "+15 Aceleración",
+            "+15 Letalidad"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta velocidad de movimiento al moverse.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Hoja Crepuscular de Draktharr",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+50 AD",
+            "+15 Letalidad",
+            "+15 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Daño adicional tras salir de sigilo.",
+            "activa": "No tiene."
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Recuerdo de Lord Dominik",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+35 AD",
+            "+25% Crítico",
+            "+30% Penetración Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta daño contra enemigos con más vida.",
+            "activa": "No tiene."
+        },
+        "costo": 3100
+    },
+    {
+        "nombre": "Colmillo de Serpiente",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+50 AD",
+            "+15 Letalidad"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce escudos enemigos al dañarlos.",
+            "activa": "No tiene."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Rencor de Serylda",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+40 AD",
+            "+15 Aceleración",
+            "+30% Penetración Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Habilidades ralentizan enemigos.",
+            "activa": "No tiene."
+        },
+        "costo": 3100
+    },
+    {
+        "nombre": "Vara de las Edades",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+60 AP",
+            "+250 Vida",
+            "+250 Maná"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga vida, maná y AP cada minuto.",
+            "activa": "No tiene."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Perdición del Liche",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+80 AP",
+            "+10 Aceleración",
+            "+5% Velocidad Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Ataque potenciado tras usar habilidad.",
+            "activa": "No tiene."
+        },
+        "costo": 2950
+    },
+    {
+        "nombre": "Abrazo del Serafín",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+35 AP",
+            "+1200 Maná",
+            "+25 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Escudo de maná al caer a poca vida.",
+            "activa": "No tiene."
+        },
+        "costo": 2950
+    },
+    {
+        "nombre": "Creador de Grietas",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+80 AP",
+            "+150 Vida",
+            "+15 Aceleración",
+            "+12% Omnivampirismo"
+        ],
+        "descripcion": {
+            "pasiva": "Daño verdadero adicional en combate largo.",
+            "activa": "No tiene."
+        },
+        "costo": 3200
+    },
+    {
+        "nombre": "Impulso Cósmico",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+75 AP",
+            "+30 Aceleración",
+            "+5% Velocidad Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta velocidad al golpear con habilidades.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Eco Armónico",
+        "tipo": "magico",
+        "tier": "legendario",
+        "atributos": [
+            "+75 AP",
+            "+300 Maná",
+            "+20 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Cura aliados al usar habilidades de escudo o cura.",
+            "activa": "No tiene."
+        },
+        "costo": 2900
+    },
+    {
+        "nombre": "Ángel Guardián",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+40 AD",
+            "+40 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Resucita al morir tras un breve retardo.",
+            "activa": "No tiene."
+        },
+        "costo": 3400
+    },
+    {
+        "nombre": "Coraza del Hombre Muerto",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+225 Vida",
+            "+50 Armadura",
+            "+5% Velocidad Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Acumula velocidad al moverse.",
+            "activa": "No tiene."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Corazón de Hielo",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+80 Armadura",
+            "+400 Maná",
+            "+25 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce velocidad de ataque enemiga.",
+            "activa": "No tiene."
+        },
+        "costo": 2700
+    },
+    {
+        "nombre": "Protector Pétreo de Amaranth",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+55 Armadura",
+            "+55 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta tamaño y resistencias en combate.",
+            "activa": "No tiene."
+        },
+        "costo": 3100
+    },
+    {
+        "nombre": "Manto de la Duodécima Hora",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+200 Vida",
+            "+50 Armadura",
+            "+50 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Cura y otorga escudo al estar bajo de vida.",
+            "activa": "No tiene."
+        },
+        "costo": 3100
+    },
+    {
+        "nombre": "Invierno Nórdico",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+350 Vida",
+            "+1200 Maná",
+            "+15 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga escudo al inmovilizar enemigos.",
+            "activa": "No tiene."
+        },
+        "costo": 2600
+    },
+    {
+        "nombre": "Guantes de Riña",
+        "tipo": "fisico",
+        "tier": "basico",
+        "atributos": [
+            "+10% Probabilidad Crítica"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta el crítico.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Daga",
+        "tipo": "fisico",
+        "tier": "basico",
+        "atributos": [
+            "+15% Velocidad de Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Ataques más rápidos.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Espada Larga",
+        "tipo": "fisico",
+        "tier": "basico",
+        "atributos": [
+            "+12 Daño de Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Más daño físico.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Hoz Espectral",
+        "tipo": "fisico",
+        "tier": "basico",
+        "atributos": [
+            "+10 AD/AP adaptable"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga oro al dañar campeones.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Tomo Amplificador",
+        "tipo": "magico",
+        "tier": "basico",
+        "atributos": [
+            "+25 Poder de Habilidad"
+        ],
+        "descripcion": {
+            "pasiva": "Más daño mágico.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Moneda Antigua",
+        "tipo": "magico",
+        "tier": "basico",
+        "atributos": [
+            "+80 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga oro y regeneración a soportes.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Anillo de Revelación",
+        "tipo": "magico",
+        "tier": "basico",
+        "atributos": [
+            "+10 Aceleración de Habilidad"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce enfriamientos.",
+            "activa": "No tiene"
+        },
+        "costo": 400
+    },
+    {
+        "nombre": "Cristal de Zafiro",
+        "tipo": "magico",
+        "tier": "basico",
+        "atributos": [
+            "+300 Maná"
+        ],
+        "descripcion": {
+            "pasiva": "Más reserva de energía.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Armadura de Tela",
+        "tipo": "defensa",
+        "tier": "basico",
+        "atributos": [
+            "+20 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Defensa contra ataques físicos.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Manto de Anulación",
+        "tipo": "defensa",
+        "tier": "basico",
+        "atributos": [
+            "+20 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Defensa contra ataques mágicos.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Escudo Reliquia",
+        "tipo": "defensa",
+        "tier": "basico",
+        "atributos": [
+            "+100 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Ejecuta súbditos para compartir oro.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Rubí de Cristal",
+        "tipo": "defensa",
+        "tier": "basico",
+        "atributos": [
+            "+150 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta la salud máxima.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Chispa Resplandeciente",
+        "tipo": "defensa",
+        "tier": "basico",
+        "atributos": [
+            "+5 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Inicia el escalado de enfriamientos.",
+            "activa": "No tiene"
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Espadón",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+40 Daño de Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Gran aumento de daño.",
+            "activa": "No tiene"
+        },
+        "costo": 1500
+    },
+    {
+        "nombre": "Martillo de Caulfield",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+25 AD",
+            "+10 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Daño y reducción de enfriamiento.",
+            "activa": "No tiene"
+        },
+        "costo": 1200
+    },
+    {
+        "nombre": "Capa de Agilidad",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta probabilidad de crítico.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Llamado del Verdugo",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20 AD"
+        ],
+        "descripcion": {
+            "pasiva": "Aplica heridas graves.",
+            "activa": "No tiene"
+        },
+        "costo": 800
+    },
+    {
+        "nombre": "Fragmento de Kircheis",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Ataque cargado con daño mágico.",
+            "activa": "No tiene"
+        },
+        "costo": 900
+    },
+    {
+        "nombre": "Último Suspiro",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+15 AD",
+            "+15% Penetración Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Ignora parte de la armadura.",
+            "activa": "No tiene"
+        },
+        "costo": 1300
+    },
+    {
+        "nombre": "Cajacuaj",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20 AD",
+            "+20% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Mejora ataques básicos.",
+            "activa": "No tiene"
+        },
+        "costo": 1200
+    },
+    {
+        "nombre": "Bacteriófago",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+15 AD",
+            "+175 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Otorga velocidad al atacar.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Arco Recurvato",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+30% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Daño adicional al impacto.",
+            "activa": "No tiene"
+        },
+        "costo": 900
+    },
+    {
+        "nombre": "Puñal Serrado",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20 AD",
+            "+10 Letalidad"
+        ],
+        "descripcion": {
+            "pasiva": "Ideal para asesinos.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Aguijón",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+35% Velocidad Ataque",
+            "+10 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Velocidad y enfriamientos.",
+            "activa": "No tiene"
+        },
+        "costo": 1200
+    },
+    {
+        "nombre": "Cetro Vampírico",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+20 AD",
+            "+10% Vampirismo Físico"
+        ],
+        "descripcion": {
+            "pasiva": "Te cura al atacar.",
+            "activa": "No tiene"
+        },
+        "costo": 1200
+    },
+    {
+        "nombre": "Fervor",
+        "tipo": "fisico",
+        "tier": "intermedio",
+        "atributos": [
+            "+15% Velocidad Ataque",
+            "+15% Crítico"
+        ],
+        "descripcion": {
+            "pasiva": "Mejora movilidad y crítico.",
+            "activa": "No tiene"
+        },
+        "costo": 1300
+    },
+    {
+        "nombre": "Capa de Fuego",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+300 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Daño de fuego cercano.",
+            "activa": "No tiene"
+        },
+        "costo": 1300
+    },
+    {
+        "nombre": "Vestidura de Zarzas",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+30 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Refleja daño y aplica heridas graves.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Catalizador de Eones",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+225 Vida",
+            "+300 Maná"
+        ],
+        "descripcion": {
+            "pasiva": "Restaura vida/maná al gastarlos.",
+            "activa": "No tiene"
+        },
+        "costo": 1100
+    },
+    {
+        "nombre": "Cota de Malla",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+40 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Gran defensa física.",
+            "activa": "No tiene"
+        },
+        "costo": 900
+    },
+    {
+        "nombre": "Cinturón de Gigante",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+350 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Gran aumento de salud.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Sudario Glacial",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+40 Armadura",
+            "+150 Maná",
+            "+10 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Defensa y enfriamientos.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Sorbehechizos",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+20 AD",
+            "+35 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Escudo contra daño mágico.",
+            "activa": "No tiene"
+        },
+        "costo": 1200
+    },
+    {
+        "nombre": "Puño de Jaurim",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+15 AD",
+            "+200 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Combina daño y salud.",
+            "activa": "No tiene"
+        },
+        "costo": 1100
+    },
+    {
+        "nombre": "Gema de Avivamiento",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+175 Vida",
+            "+10 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Salud y enfriamientos.",
+            "activa": "No tiene"
+        },
+        "costo": 1000
+    },
+    {
+        "nombre": "Capa de Negatrón",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+50 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Gran defensa mágica.",
+            "activa": "No tiene"
+        },
+        "costo": 900
+    },
+    {
+        "nombre": "Hábito del Espectro",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+175 Vida",
+            "+20 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Regeneración tras recibir daño mágico.",
+            "activa": "No tiene"
+        },
+        "costo": 1100
+    },
+    {
+        "nombre": "Protector del Guardián",
+        "tipo": "defensa",
+        "tier": "intermedio",
+        "atributos": [
+            "+40 Armadura"
+        ],
+        "descripcion": {
+            "pasiva": "Reduce daño de ataques básicos.",
+            "activa": "No tiene"
+        },
+        "costo": 1050
+    },
+    {
+        "nombre": "Botas de Dinamismo",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+10 Letalidad",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Penetración para asesinos.",
+            "activa": "No tiene"
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Botas de Maná",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+10 Penetración Mágica",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Más daño para magos.",
+            "activa": "No tiene"
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Botas Voraces",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+10% Vampirismo",
+            "+45 Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Curación por daño.",
+            "activa": "No tiene"
+        },
+        "costo": 1400
+    },
+    {
+        "nombre": "Encantamiento Fajín",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Fajín de Mercurio"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Elimina todos los efectos de control de masas."
+        },
+        "costo": 800
+    },
+    {
+        "nombre": "Encantamiento de Gárgola",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Gárgola"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Aumenta la vida máxima temporalmente."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento de Gloria",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Gloria Justiciera"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Aumento masivo de velocidad hacia enemigos."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento Magnetrón",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Magnetrón"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Se desliza hacia un aliado para protegerlo."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento de Meteoro",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Meteoro"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Llama a un meteoro que cae tras un retardo."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento de Repulsor",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Repulsor"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Empuja a los enemigos cercanos hacia atrás."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Encantamiento de Velo",
+        "tipo": "encantamiento",
+        "tier": "encantamiento",
+        "atributos": [
+            "Activa: Velo"
+        ],
+        "descripcion": {
+            "pasiva": "No tiene.",
+            "activa": "Otorga un escudo de hechizos a un aliado."
+        },
+        "costo": 500
+    },
+    {
+        "nombre": "Terminus",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+40 AD",
+            "+30% Velocidad Ataque"
+        ],
+        "descripcion": {
+            "pasiva": "Alterna entre penetración de armadura y mágica.",
+            "activa": "No tiene"
+        },
+        "costo": 3400
+    },
+    {
+        "nombre": "Corazón de Acero",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+700 Vida",
+            "+20 Aceleración",
+            "+150% Reg. Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Consumo Colosal: Carga un ataque potente contra campeones (700 de alcance) durante 3s para infligir 125 + 5% de la vida máxima como daño físico.",
+            "activa": "Al activar Consumo Colosal, obtienes vida máxima permanente igual al 12% del daño infligido."
+        },
+        "costo": 2800
+    },
+    {
+        "nombre": "Lanza de Shojin",
+        "tipo": "fisico",
+        "tier": "legendario",
+        "atributos": [
+            "+50 AD",
+            "+450 Vida",
+            "+20 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta la velocidad tras usar la definitiva.",
+            "activa": "No tiene"
+        },
+        "costo": 3200
+    },
+    {
+        "nombre": "Hidra Titánica",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+550 Vida"
+        ],
+        "descripcion": {
+            "pasiva": "Tus ataques dañan en cono tras el objetivo.",
+            "activa": "No tiene"
+        },
+        "costo": 3000
+    },
+    {
+        "nombre": "Guantelete Nacido del Hielo",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+50 Armadura",
+            "+450 Maná",
+            "+25 Aceleración"
+        ],
+        "descripcion": {
+            "pasiva": "Crea una zona de ralentización tras usar habilidad.",
+            "activa": "No tiene"
+        },
+        "costo": 2700
+    },
+    {
+        "nombre": "Final del Ingenio",
+        "tipo": "defensa",
+        "tier": "legendario",
+        "atributos": [
+            "+45% Velocidad Ataque",
+            "+50 Resistencia Mágica"
+        ],
+        "descripcion": {
+            "pasiva": "Daño mágico al impacto y robo de resistencia.",
+            "activa": "No tiene"
+        },
+        "costo": 2700
+    },
+    {
+        "nombre": "Botas de Velocidad",
+        "tipo": "botas",
+        "tier": "basico",
+        "atributos": [
+            "+20 Velocidad de Movimiento"
+        ],
+        "descripcion": {
+            "pasiva": "Aumenta la velocidad al caminar.",
+            "activa": "No tiene."
+        },
+        "costo": 500
+    }
+]

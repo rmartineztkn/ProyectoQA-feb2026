@@ -1,12 +1,12 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 
-describe('Wild Rift App E2E', () => {
+describe("Wild Rift App E2E", () => {
     let browser;
     let page;
 
     jest.setTimeout(60000);
 
-    const isHeadless = process.env.HEADLESS !== 'false';
+    const isHeadless = process.env.HEADLESS !== "false";
 
     beforeAll(async () => {
         try {
@@ -14,7 +14,7 @@ describe('Wild Rift App E2E', () => {
                 headless: isHeadless, // Dinámico para CI
                 slowMo: isHeadless ? 0 : 100,
                 defaultViewport: null,
-                args: ['--no-sandbox', '--disable-setuid-sandbox', '--start-maximized']
+                args: ["--no-sandbox", "--disable-setuid-sandbox", "--start-maximized"]
             });
             page = await browser.newPage();
         } catch (error) {
@@ -29,68 +29,68 @@ describe('Wild Rift App E2E', () => {
         }
     });
 
-    test('CP1: Debe cargar la página principal y mostrar el título correcto', async () => {
-        await page.goto('http://127.0.0.1:3000/champions');
+    test("CP1: Debe cargar la página principal y mostrar el título correcto", async () => {
+        await page.goto("http://127.0.0.1:3000/champions");
         const title = await page.title();
-        expect(title).toBe('Proyecto Campeones de Wild Rift');
+        expect(title).toBe("Proyecto Campeones de Wild Rift");
     });
 
-    test('CP2: Las columnas de la tabla deben estar completas (8 columnas)', async () => {
-        await page.goto('http://127.0.0.1:3000/champions');
-        const headerCount = await page.$$eval('table thead th', ths => ths.length);
+    test("CP2: Las columnas de la tabla deben estar completas (8 columnas)", async () => {
+        await page.goto("http://127.0.0.1:3000/champions");
+        const headerCount = await page.$$eval("table thead th", ths => ths.length);
         console.log(`Columnas detectadas: ${headerCount}`);
         expect(headerCount).toBe(8); // ID, Icon, Nombre, Daño, Tipo, Posición, Descripción, Acciones
     });
 
-    test('CP3: Debe funcionar la búsqueda parcial (LIKE)', async () => {
-        await page.goto('http://127.0.0.1:3000/champions');
-        await page.type('input[name="searchNombre"]', 'Deme');
+    test("CP3: Debe funcionar la búsqueda parcial (LIKE)", async () => {
+        await page.goto("http://127.0.0.1:3000/champions");
+        await page.type("input[name=\"searchNombre\"]", "Deme");
 
         // Al hacer clic en .btn-search se recarga la página. 
         // Debemos esperar a que la navegación termine para no perder el contexto.
         await Promise.all([
-            page.waitForNavigation({ waitUntil: 'networkidle0' }),
-            page.click('.btn-search')
+            page.waitForNavigation({ waitUntil: "networkidle0" }),
+            page.click(".btn-search")
         ]);
 
-        await page.waitForSelector('table tbody tr');
-        const names = await page.$$eval('table tbody tr td:nth-child(3)', tds => tds.map(td => td.textContent.trim()));
+        await page.waitForSelector("table tbody tr");
+        const names = await page.$$eval("table tbody tr td:nth-child(3)", tds => tds.map(td => td.textContent.trim()));
 
         names.forEach(name => {
-            expect(name.toLowerCase()).toContain('deme');
+            expect(name.toLowerCase()).toContain("deme");
         });
     });
 
-    test('CP4: Debe mostrar el modal de éxito al editar un campeón', async () => {
-        await page.goto('http://127.0.0.1:3000/champions');
+    test("CP4: Debe mostrar el modal de éxito al editar un campeón", async () => {
+        await page.goto("http://127.0.0.1:3000/champions");
 
         // 1. Abrir el modal de edición del primer campeón
-        await page.waitForSelector('.btn-edit');
-        await page.click('.btn-edit');
+        await page.waitForSelector(".btn-edit");
+        await page.click(".btn-edit");
 
         // 2. Esperar a que el modal sea visible y cambiar un valor (ej. daño)
-        await page.waitForSelector('#editModal', { visible: true });
-        const damageInput = await page.$('#editDamage');
+        await page.waitForSelector("#editModal", { visible: true });
+        const damageInput = await page.$("#editDamage");
         await damageInput.click({ clickCount: 3 }); // Seleccionar todo
-        await damageInput.type('99');
+        await damageInput.type("99");
 
         // 3. Guardar cambios
         await new Promise(r => setTimeout(r, 1000));
-        await page.click('.btn-save-edit');
+        await page.click(".btn-save-edit");
 
         // 4. Verificar que aparezca el modal de éxito
-        await page.waitForSelector('#successModal', { visible: true });
-        const successText = await page.$eval('#successModal p', el => el.textContent);
-        expect(successText).toContain('El cambio fue ejecutado correctamente');
+        await page.waitForSelector("#successModal", { visible: true });
+        const successText = await page.$eval("#successModal p", el => el.textContent);
+        expect(successText).toContain("El cambio fue ejecutado correctamente");
 
         // Pausa para que el usuario vea el modal
         await new Promise(r => setTimeout(r, 3000));
 
         // 5. Cerrar el modal
-        await page.click('.btn-close-success');
+        await page.click(".btn-close-success");
         await new Promise(r => setTimeout(r, 1000));
 
-        const isVisible = await page.$eval('#successModal', el => el.style.display !== 'none');
+        const isVisible = await page.$eval("#successModal", el => el.style.display !== "none");
         expect(isVisible).toBe(false);
     });
 });

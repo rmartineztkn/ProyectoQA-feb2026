@@ -1,58 +1,61 @@
-const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const { MongoClient, ObjectId } = require("mongodb");
+const fs = require("fs");
+const path = require("path");
 const app = express();
 const port = 3000;
 
-const url = 'mongodb://127.0.0.1:27017';
-const dbName = 'Proyecto-Wildrift';
+const url = "mongodb://127.0.0.1:27017";
+const dbName = "Proyecto-Wildrift";
 let client = new MongoClient(url, { serverSelectionTimeoutMS: 2000 });
 let collection = null;
+let objectsCollection = null; // Nueva colección para objetos
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 async function connectToDB() {
     try {
         if (!collection) {
             await client.connect();
             const db = client.db(dbName);
-            collection = db.collection('champions');
-            console.log('Successfully connected to MongoDB');
+            collection = db.collection("champions");
+            objectsCollection = db.collection("objetos"); // Inicializar colección de objetos
+            console.log("Successfully connected to MongoDB");
         }
-        return collection;
+        return { champions: collection, objects: objectsCollection };
     } catch (error) {
-        console.warn('MongoDB connection failed. Using mock data.');
+        console.warn("MongoDB connection failed. Using mock data:", error.message);
         collection = null;
-        return null;
+        objectsCollection = null;
+        return { champions: null, objects: null };
     }
 }
 
 let fallbackChampions = [];
 try {
-    const data = fs.readFileSync(path.join(__dirname, 'champions.json'), 'utf8');
+    const data = fs.readFileSync(path.join(__dirname, "champions.json"), "utf8");
     fallbackChampions = JSON.parse(data).map((c, i) => ({
         ...c,
         id: c.id || (i + 1)
     }));
 } catch (e) {
-    console.error('Failed to load local data:', e);
+    console.error("Failed to load local data:", e);
 }
 
-app.get('/champions', async (req, res) => {
+app.get("/champions", async (req, res) => {
     try {
-        const activeCollection = await connectToDB();
+        const { champions: activeCollection } = await connectToDB();
 
-        const searchId = req.query.searchId || '';
-        const searchNombre = req.query.searchNombre || '';
-        const searchDamage = req.query.searchDamage || '';
-        const searchTipo = req.query.searchTipo || '';
-        const searchPosicion = req.query.searchPosicion || '';
+        const searchId = req.query.searchId || "";
+        const searchNombre = req.query.searchNombre || "";
+        const searchDamage = req.query.searchDamage || "";
+        const searchTipo = req.query.searchTipo || "";
+        const searchPosicion = req.query.searchPosicion || "";
 
-        const sortBy = req.query.sort || 'id';
-        const order = req.query.order || 'asc';
+        const sortBy = req.query.sort || "id";
+        const order = req.query.order || "asc";
 
         let champions = [];
 
@@ -62,13 +65,13 @@ app.get('/champions', async (req, res) => {
                 const idNum = parseInt(searchId);
                 query.$or = [{ id: idNum }, { id: searchId }];
             }
-            if (searchNombre) query.nombre = { $regex: searchNombre.trim(), $options: 'i' };
+            if (searchNombre) query.nombre = { $regex: searchNombre.trim(), $options: "i" };
             if (searchDamage) query.damage = parseInt(searchDamage);
             if (searchTipo) query.tipo = searchTipo; // Tipo suele ser exacto (AD, AP, etc)
             if (searchPosicion) query.posicion = searchPosicion;
 
             let sortOptions = {};
-            sortOptions[sortBy] = (order === 'asc' ? 1 : -1);
+            sortOptions[sortBy] = (order === "asc" ? 1 : -1);
             champions = await activeCollection.find(query).sort(sortOptions).toArray();
         } else {
             champions = [...fallbackChampions];
@@ -84,13 +87,13 @@ app.get('/champions', async (req, res) => {
             champions.sort((a, b) => {
                 const valA = a[sortBy];
                 const valB = b[sortBy];
-                if (order === 'asc') return valA > valB ? 1 : -1;
+                if (order === "asc") return valA > valB ? 1 : -1;
                 return valA < valB ? 1 : -1;
             });
         }
 
         const getSortLink = (field) => {
-            const nextOrder = (sortBy === field && order === 'asc') ? 'desc' : 'asc';
+            const nextOrder = (sortBy === field && order === "asc") ? "desc" : "asc";
             const params = new URLSearchParams({
                 searchId, searchNombre, searchDamage, searchTipo, searchPosicion,
                 sort: field,
@@ -100,8 +103,8 @@ app.get('/champions', async (req, res) => {
         };
 
         const getArrow = (field) => {
-            if (sortBy !== field) return '<span style="color: #5b5a56; font-size: 0.8em">⇅</span>';
-            return order === 'asc' ? '▲' : '▼';
+            if (sortBy !== field) return "<span style=\"color: #5b5a56; font-size: 0.8em\">⇅</span>";
+            return order === "asc" ? "▲" : "▼";
         };
 
         const isFiltering = searchId || searchNombre || searchDamage || searchTipo || searchPosicion;
@@ -274,10 +277,152 @@ app.get('/champions', async (req, res) => {
                 .modal-success { max-width: 400px !important; text-align: center; border-color: var(--hextech-blue) !important; }
                 .success-icon { color: var(--hextech-blue); font-size: 3rem; margin-bottom: 15px; }
                 .btn-close-success { background: var(--hextech-blue); color: var(--hextech-black); border: none; padding: 10px 20px; font-family: 'Beaufort for LOL', serif; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 15px; }
+
+                /* Botón Lateral de Objetos */
+                .side-tab {
+                    position: fixed;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: var(--hextech-gold);
+                    color: var(--hextech-black);
+                    padding: 20px 10px;
+                    writing-mode: vertical-rl;
+                    text-orientation: mixed;
+                    cursor: pointer;
+                    font-family: 'Beaufort for LOL', serif;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    border-radius: 5px 0 0 5px;
+                    box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+                    z-index: 900;
+                    transition: all 0.3s;
+                }
+                .side-tab:hover {
+                    padding-right: 25px;
+                    background: var(--hextech-gold-light);
+                }
+                .side-icon {
+                    width: 30px;
+                    height: 30px;
+                    margin-bottom: 10px;
+                    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+                }
+                .header-icon {
+                    width: 35px;
+                    height: 35px;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                    filter: drop-shadow(0 0 5px rgba(200, 155, 60, 0.3));
+                }
+
+                /* Estilos especiales para el modal de objetos */
+                #objectsModal .modal-content {
+                    max-width: 800px;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                }
+                .item-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+                .item-card {
+                    background: rgba(1, 10, 19, 0.9);
+                    border: 1px solid #3c3c41;
+                    padding: 15px;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    transition: transform 0.2s;
+                }
+                .item-card:hover {
+                    transform: translateY(-5px);
+                    border-color: var(--hextech-gold);
+                }
+                .item-img {
+                    width: 64px;
+                    height: 64px;
+                    border: 2px solid var(--hextech-gold);
+                    margin-bottom: 12px;
+                    background: #010a13;
+                }
+                .item-name {
+                    color: var(--hextech-gold);
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    font-family: 'Beaufort for LOL', serif;
+                }
+                .item-type {
+                    font-size: 0.7em;
+                    text-transform: uppercase;
+                    color: #0ac8b9;
+                    margin-bottom: 8px;
+                }
+                .item-attr {
+                    font-size: 0.8em;
+                    margin: 5px 0;
+                    color: #f0e6d2;
+                    flex-grow: 1;
+                }
+                .item-cost {
+                    color: #f0e6d2;
+                    font-weight: bold;
+                    font-size: 0.85rem;
+                    margin-top: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 4px;
+                }
+                .gold-icon {
+                    color: #ffd700;
+                    font-size: 0.8rem;
+                }
+
+                /* Pestañas de categoría */
+                .category-tabs {
+                    display: flex;
+                    gap: 8px;
+                    margin-bottom: 20px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .cat-tab {
+                    padding: 8px 15px;
+                    background: rgba(1, 10, 19, 0.8);
+                    border: 1px solid #3c3c41;
+                    color: #a09b8c;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 0.8rem;
+                    transition: all 0.3s;
+                    text-transform: uppercase;
+                    font-family: 'Beaufort for LOL', serif;
+                }
+                .cat-tab:hover {
+                    color: var(--hextech-gold);
+                    border-color: var(--hextech-gold);
+                }
+                .cat-tab.active {
+                    background: var(--hextech-gold);
+                    color: var(--hextech-black);
+                    border-color: var(--hextech-gold);
+                    font-weight: bold;
+                    box-shadow: 0 0 10px rgba(200, 155, 60, 0.4);
+                }
             </style>
         </head>
         <body>
-            <div class="container">
+            <!-- Pestaña lateral -->
+            <div class="side-tab" onclick="openObjectsModal()">
+                <img src="/items.png" alt="Items" class="side-icon">
+                Ver Objetos
+            </div>
+            <main class="container">
                 <h1>
                     <img src="/logo.png" alt="Wild Rift Logo" class="main-logo">
                     Proyecto Campeones de Wild Rift
@@ -285,40 +430,40 @@ app.get('/champions', async (req, res) => {
                 <div class="panel">
                     <h2 class="panel-header">
                         🔍 Buscar Campeones
-                        ${isFiltering ? '<a href="/champions" class="btn-clear">Limpiar Filtros</a>' : ''}
+                        ${isFiltering ? "<a href=\"/champions\" class=\"btn-clear\">Limpiar Filtros</a>" : ""}
                     </h2>
                     <form action="/champions" method="GET">
                         <input type="hidden" name="sort" value="${sortBy}">
                         <input type="hidden" name="order" value="${order}">
                         <div class="filter-group">
                             <div class="filter-item" style="max-width: 80px;">
-                                <label>ID</label>
-                                <input type="number" name="searchId" value="${searchId}">
+                                <label for="searchId">ID</label>
+                                <input type="number" name="searchId" id="searchId" value="${searchId}">
                             </div>
                             <div class="filter-item">
-                                <label>Nombre</label>
-                                <input type="text" name="searchNombre" value="${searchNombre}">
+                                <label for="searchNombre">Nombre</label>
+                                <input type="text" name="searchNombre" id="searchNombre" value="${searchNombre}">
                             </div>
                             <div class="filter-item">
-                                <label>Tipo</label>
-                                <select name="searchTipo">
+                                <label for="searchTipo">Tipo</label>
+                                <select name="searchTipo" id="searchTipo" aria-label="Filtrar por tipo de daño">
                                     <option value="">Todos</option>
-                                    <option value="AD" ${searchTipo === 'AD' ? 'selected' : ''}>AD</option>
-                                    <option value="AP" ${searchTipo === 'AP' ? 'selected' : ''}>AP</option>
-                                    <option value="Mixto" ${searchTipo === 'Mixto' ? 'selected' : ''}>Mixto</option>
-                                    <option value="Tanque" ${searchTipo === 'Tanque' ? 'selected' : ''}>Tanque</option>
+                                    <option value="AD" ${searchTipo === "AD" ? "selected" : ""}>AD</option>
+                                    <option value="AP" ${searchTipo === "AP" ? "selected" : ""}>AP</option>
+                                    <option value="Mixto" ${searchTipo === "Mixto" ? "selected" : ""}>Mixto</option>
+                                    <option value="Tanque" ${searchTipo === "Tanque" ? "selected" : ""}>Tanque</option>
                                 </select>
                             </div>
                             <div class="filter-item">
-                                <label>Posición</label>
-                                <select name="searchPosicion">
+                                <label for="searchPosicion">Posición</label>
+                                <select name="searchPosicion" id="searchPosicion" aria-label="Filtrar por posición en el mapa">
                                     <option value="">Todas</option>
-                                    <option value="Luchador" ${searchPosicion === 'Luchador' ? 'selected' : ''}>Luchador</option>
-                                    <option value="Mago" ${searchPosicion === 'Mago' ? 'selected' : ''}>Mago</option>
-                                    <option value="Asesino" ${searchPosicion === 'Asesino' ? 'selected' : ''}>Asesino</option>
-                                    <option value="Tirador" ${searchPosicion === 'Tirador' ? 'selected' : ''}>Tirador</option>
-                                    <option value="Tanque" ${searchPosicion === 'Tanque' ? 'selected' : ''}>Tanque</option>
-                                    <option value="Apoyo" ${searchPosicion === 'Apoyo' ? 'selected' : ''}>Apoyo</option>
+                                    <option value="Luchador" ${searchPosicion === "Luchador" ? "selected" : ""}>Luchador</option>
+                                    <option value="Mago" ${searchPosicion === "Mago" ? "selected" : ""}>Mago</option>
+                                    <option value="Asesino" ${searchPosicion === "Asesino" ? "selected" : ""}>Asesino</option>
+                                    <option value="Tirador" ${searchPosicion === "Tirador" ? "selected" : ""}>Tirador</option>
+                                    <option value="Tanque" ${searchPosicion === "Tanque" ? "selected" : ""}>Tanque</option>
+                                    <option value="Apoyo" ${searchPosicion === "Apoyo" ? "selected" : ""}>Apoyo</option>
                                 </select>
                             </div>
                             <div class="filter-item" style="max-width: 120px;">
@@ -333,16 +478,16 @@ app.get('/champions', async (req, res) => {
                     <form action="/champions" method="POST">
                         <div class="filter-group">
                             <div class="filter-item">
-                                <label>Nombre *</label>
-                                <input type="text" name="nombre" placeholder="Ej: Jinx" required>
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" name="nombre" id="nombre" placeholder="Ej: Jinx" required>
                             </div>
                             <div class="filter-item">
-                                <label>Daño</label>
-                                <input type="number" name="damage" placeholder="0-100">
+                                <label for="damage">Daño</label>
+                                <input type="number" name="damage" id="damage" placeholder="0-100">
                             </div>
                             <div class="filter-item">
-                                <label>Tipo</label>
-                                <select name="tipo">
+                                <label for="tipo">Tipo</label>
+                                <select name="tipo" id="tipo" aria-label="Seleccionar tipo de daño">
                                     <option value="">Seleccionar...</option>
                                     <option value="AD">AD</option>
                                     <option value="AP">AP</option>
@@ -351,8 +496,8 @@ app.get('/champions', async (req, res) => {
                                 </select>
                             </div>
                             <div class="filter-item">
-                                <label>Posición</label>
-                                <select name="posicion">
+                                <label for="posicion">Posición</label>
+                                <select name="posicion" id="posicion" aria-label="Seleccionar posición de juego">
                                     <option value="">Seleccionar...</option>
                                     <option value="Luchador">Luchador</option>
                                     <option value="Mago">Mago</option>
@@ -363,8 +508,8 @@ app.get('/champions', async (req, res) => {
                                 </select>
                             </div>
                             <div class="filter-item" style="flex: 2; min-width: 250px;">
-                                <label>Descripción *</label>
-                                <input type="text" name="descripcion" placeholder="Breve resumen de habilidades..." required>
+                                <label for="descripcion">Descripción *</label>
+                                <input type="text" name="descripcion" id="descripcion" placeholder="Breve resumen de habilidades..." required>
                             </div>
                             <div class="filter-item" style="flex: 0; min-width: 120px;">
                                 <label>&nbsp;</label>
@@ -377,9 +522,9 @@ app.get('/champions', async (req, res) => {
                 <table>
                     <thead>
                         <tr>
-                            <th><a href="${getSortLink('id')}">ID ${getArrow('id')}</a></th>
+                            <th><a href="${getSortLink("id")}">ID ${getArrow("id")}</a></th>
                             <th style="width: 60px;">Icono</th>
-                            <th><a href="${getSortLink('nombre')}">Nombre ${getArrow('nombre')}</a></th>
+                            <th><a href="${getSortLink("nombre")}">Nombre ${getArrow("nombre")}</a></th>
                             <th>Daño</th>
                             <th>Tipo</th>
                             <th>Posición</th>
@@ -391,29 +536,29 @@ app.get('/champions', async (req, res) => {
         `;
 
         if (champions.length === 0) {
-            html += `<tr><td colspan="8" style="text-align:center;">No se encontraron campeones.</td></tr>`;
+            html += "<tr><td colspan=\"8\" style=\"text-align:center;\">No se encontraron campeones.</td></tr>";
         } else {
             const getChampImage = (name) => {
-                let cleanName = name.replace(/[^a-zA-Z]/g, '');
-                if (name === 'Wukong') cleanName = 'MonkeyKing';
+                let cleanName = name.replace(/[^a-zA-Z]/g, "");
+                if (name === "Wukong") cleanName = "MonkeyKing";
                 return `https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/${cleanName}.png`;
             };
 
             champions.forEach(champ => {
-                let badgeClass = 'bg-mix';
-                if (champ.tipo === 'AD') badgeClass = 'bg-ad';
-                if (champ.tipo === 'AP') badgeClass = 'bg-ap';
-                if (champ.tipo === 'Tanque') badgeClass = 'bg-tank';
+                let badgeClass = "bg-mix";
+                if (champ.tipo === "AD") badgeClass = "bg-ad";
+                if (champ.tipo === "AP") badgeClass = "bg-ap";
+                if (champ.tipo === "Tanque") badgeClass = "bg-tank";
 
                 html += `
                     <tr>
-                        <td>#${champ.id || 'N/A'}</td>
-                        <td><img src="${getChampImage(champ.nombre)}" class="champ-icon" onerror="this.onerror=null; this.src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/Sona.png'"></td>
+                        <td>#${champ.id || "N/A"}</td>
+                        <td><img src="${getChampImage(champ.nombre)}" alt="Icono de ${champ.nombre}" class="champ-icon" onerror="this.onerror=null; this.src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/Sona.png'"></td>
                         <td style="font-weight: bold;">${champ.nombre}</td>
                         <td>${champ.damage}</td>
                         <td><span class="badge ${badgeClass}">${champ.tipo}</span></td>
-                        <td style="font-size: 0.9rem;">${champ.posicion || ''}</td>
-                        <td style="color: #a09b8c; font-size: 0.85rem;">${champ.descripcion || ''}</td>
+                        <td style="font-size: 0.9rem;">${champ.posicion || ""}</td>
+                        <td style="color: #a09b8c; font-size: 0.85rem;">${champ.descripcion || ""}</td>
                         <td>
                             <button onclick='openEditModal(${JSON.stringify(champ).replace(/'/g, "&apos;")})' class="btn-edit" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button onclick="openDeleteModal('${champ._id || champ.id}', '${champ.nombre.replace(/'/g, "\\'")}')" class="btn-delete" title="Eliminar"><i class="fa-solid fa-trash-can"></i></button>
@@ -427,9 +572,9 @@ app.get('/champions', async (req, res) => {
                     </tbody>
                 </table>
                   <div style="margin-top: 25px; font-size: 0.8rem; color: #5b5a56; text-align: center; border-top: 1px solid #1c2636; padding-top: 15px;">
-                    PROYECTO WILD RIFT • ${collection ? 'MODO DB' : '<span style="color: #cd3333;">MODO MOCK (Sin DB)</span>'} | TOTAL: ${champions.length}
+                    PROYECTO WILD RIFT • ${collection ? "MODO DB" : "<span style=\"color: #cd3333;\">MODO MOCK (Sin DB)</span>"} | TOTAL: ${champions.length}
                 </div>
-            </div>
+            </main>
 
             <!-- Modal Eliminar -->
             <div id="deleteModal" class="modal">
@@ -452,17 +597,17 @@ app.get('/champions', async (req, res) => {
                     <h2 class="modal-header">⚔️ Editar Campeón</h2>
                     <form id="editForm" method="POST">
                         <div class="filter-item" style="margin-bottom: 15px;">
-                            <label>Nombre *</label>
+                            <label for="editNombre">Nombre *</label>
                             <input type="text" name="nombre" id="editNombre" required>
                         </div>
                         <div style="display: flex; gap: 15px; margin-bottom: 15px;">
                             <div class="filter-item">
-                                <label>Daño</label>
+                                <label for="editDamage">Daño</label>
                                 <input type="number" name="damage" id="editDamage">
                             </div>
                             <div class="filter-item">
-                                <label>Tipo</label>
-                                <select name="tipo" id="editTipo">
+                                <label for="editTipo">Tipo</label>
+                                <select name="tipo" id="editTipo" aria-label="Editar tipo de daño">
                                     <option value="">Seleccionar...</option>
                                     <option value="AD">AD</option>
                                     <option value="AP">AP</option>
@@ -472,8 +617,8 @@ app.get('/champions', async (req, res) => {
                             </div>
                         </div>
                         <div class="filter-item" style="margin-bottom: 15px;">
-                            <label>Posición</label>
-                            <select name="posicion" id="editPosicion">
+                            <label for="editPosicion">Posición</label>
+                            <select name="posicion" id="editPosicion" aria-label="Editar posición de juego">
                                 <option value="">Seleccionar...</option>
                                 <option value="Luchador">Luchador</option>
                                 <option value="Mago">Mago</option>
@@ -484,7 +629,7 @@ app.get('/champions', async (req, res) => {
                             </select>
                         </div>
                         <div class="filter-item">
-                            <label>Descripción *</label>
+                            <label for="editDescripcion">Descripción *</label>
                             <input type="text" name="descripcion" id="editDescripcion" required>
                         </div>
                         <div class="modal-footer">
@@ -502,6 +647,41 @@ app.get('/champions', async (req, res) => {
                     <h2 class="modal-header" style="border:none; margin:0; color:var(--hextech-blue);">¡Éxito!</h2>
                     <p>El cambio fue ejecutado correctamente.</p>
                     <button class="btn-close-success" onclick="closeModal('successModal')">Cerrar</button>
+                </div>
+            </div>
+
+
+            <!-- Modal Listado de Objetos -->
+            <div id="objectsModal" class="modal">
+                <div class="modal-content">
+                    <h2 class="modal-header">
+                        <img src="/items.png" alt="Items" class="header-icon">
+                        Inventario de Objetos Wild Rift
+                    </h2>
+                    
+                    <!-- Buscador de Objetos -->
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="objectSearchInput" placeholder="Buscar objeto por nombre..." 
+                               style="width: 100%; box-sizing: border-box; padding: 12px; border-radius: 4px;"
+                               onkeyup="filterObjects()">
+                    </div>
+
+                    <!-- Filtros por Tipo (Categorías) -->
+                    <div class="category-tabs" id="categoryTabs">
+                        <button class="cat-tab active" onclick="setCategory('all', this)">Todos</button>
+                        <button class="cat-tab" onclick="setCategory('fisico', this)">Físico</button>
+                        <button class="cat-tab" onclick="setCategory('magico', this)">Mágico</button>
+                        <button class="cat-tab" onclick="setCategory('defensa', this)">Defensa</button>
+                        <button class="cat-tab" onclick="setCategory('botas', this)">Botas</button>
+                        <button class="cat-tab" onclick="setCategory('encantamiento', this)">Hechizos</button>
+                    </div>
+
+                    <div id="objectsList" class="item-grid">
+                        <p style="text-align: center; width: 100%;">Cargando objetos...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-cancel" onclick="closeModal('objectsModal')">Cerrar</button>
+                    </div>
                 </div>
             </div>
 
@@ -538,6 +718,194 @@ app.get('/champions', async (req, res) => {
                     document.getElementById(modalId).style.display = 'none';
                 }
 
+                let allObjects = []; // Almacén global para filtrado rápido
+                let currentCategory = 'all';
+
+                async function openObjectsModal() {
+                    document.getElementById('objectsModal').style.display = 'block';
+                    document.getElementById('objectSearchInput').value = '';
+                    
+                    // Resetear pestañas al abrir
+                    currentCategory = 'all';
+                    const tabs = document.querySelectorAll('.cat-tab');
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    if(tabs[0]) tabs[0].classList.add('active');
+
+                    const listContainer = document.getElementById('objectsList');
+                    listContainer.innerHTML = '<p style="text-align: center; width: 100%;">Cargando objetos...</p>';
+                    
+                    try {
+                        const response = await fetch('/items');
+                        allObjects = await response.json();
+                        renderObjects(allObjects);
+                    } catch (error) {
+                        listContainer.innerHTML = '<p style="color: #cd3333;">Error al cargar los objetos.</p>';
+                    }
+                }
+
+                function setCategory(category, element) {
+                    currentCategory = category;
+                    
+                    // UI: Actualizar clase activa
+                    const tabs = document.querySelectorAll('.cat-tab');
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    element.classList.add('active');
+                    
+                    filterObjects();
+                }
+
+                function renderObjects(items) {
+                    const listContainer = document.getElementById('objectsList');
+                    if (items.length === 0) {
+                        listContainer.innerHTML = '<p style="text-align: center; width: 100%; color: #a09b8c;">No se encontraron objetos.</p>';
+                        return;
+                    }
+
+                    const nameMap = {
+                        "Filo Infinito": "infinity-edge",
+                        "Sanguinaria": "bloodthirster",
+                        "Recolector": "the-collector",
+                        "Huracán de Runaan": "runaans-hurricane",
+                        "Bailarín Espectral": "phantom-dancer",
+                        "Hoja del Rey Arruinado": "blade-of-the-ruined-king",
+                        "Cuchilla Negra": "black-cleaver",
+                        "Fuerza de la Trinidad": "trinity-force",
+                        "Devorador de Almas": "awakened-soulstealer",
+                        "Recordatorio Mortal": "mortal-reminder",
+                        "Sombrero Mortal de Rabadon": "rabadons-deathcap",
+                        "Eco de Luden": "ludens-echo",
+                        "Tormento de Liandry": "liandrys-torment",
+                        "Orbe del Infinito": "infinity-orb",
+                        "Diente de Nashor": "nashors-tooth",
+                        "Bastón del Vacío": "void-staff",
+                        "Morellonomicón": "morellonomicon",
+                        "Cristal de Rylai": "rylais-crystal-scepter",
+                        "Égida de Fuego Solar": "sunfire-aegis",
+                        "Malla de Espinas": "thornmail",
+                        "Rostro Espiritual": "spirit-visage",
+                        "Presagio de Randuin": "randuins-omen",
+                        "Fuerza de la Naturaleza": "force-of-nature",
+                        "Grebas de Berserker": "berserkers-greaves",
+                        "Botas Jonias de la Lucidez": "ionian-boots-of-lucidity",
+                        "Botas Blindadas": "plated-steelcaps",
+                        "Botas de Mercurio": "mercurys-treads",
+                        "Encantamiento Estasis": "stasis",
+                        "Encantamiento Protocinturón": "protobelt",
+                        "Encantamiento Redención": "redemption",
+                        "Encantamiento Medallón": "locket",
+                        // Nuevos Objetos
+                        "Daga de Statikk": "statikk-shiv",
+                        "Cañón de Fuego Rápido": "rapid-firecannon",
+                        "Espada Fantasma de Youmuu": "youmuus-ghostblade",
+                        "Hoja Crepuscular de Draktharr": "duskblade-of-draktharr",
+                        "Recuerdo de Lord Dominik": "lord-dominiks-regards",
+                        "Colmillo de Serpiente": "serpents-fang",
+                        "Rencor de Serylda": "seryldas-grudge",
+                        "Vara de las Edades": "rod-of-ages",
+                        "Perdición del Liche": "lich-bane",
+                        "Abrazo del Serafín": "archangels-staff",
+                        "Creador de Grietas": "riftmaker",
+                        "Impulso Cósmico": "cosmic-drive",
+                        "Eco Armónico": "harmonic-echo",
+                        "Ángel Guardián": "guardian-angel",
+                        "Coraza del Hombre Muerto": "dead-mans-plate",
+                        "Corazón de Hielo": "frozen-heart",
+                        "Protector Pétreo de Amaranth": "amaranths-twinguard",
+                        "Manto de la Duodécima Hora": "mantle-of-the-twelfth-hour",
+                        "Invierno Nórdico": "winters-approach",
+                        // --- Básicos ---
+                        "Guantes de Riña": "brawlers-gloves",
+                        "Daga": "dagger",
+                        "Espada Larga": "long-sword",
+                        "Hoz Espectral": "spectrals-sickle",
+                        "Tomo Amplificador": "amplifying-tome",
+                        "Moneda Antigua": "ancient-coin",
+                        "Anillo de Revelación": "ring-of-revelation",
+                        "Cristal de Zafiro": "common-sapphire-crystal",
+                        "Armadura de Tela": "cloth-armor",
+                        "Manto de Anulación": "null-magic-mantle",
+                        "Escudo Reliquia": "relic-shield",
+                        "Rubí de Cristal": "ruby-crystal",
+                        "Chispa Resplandeciente": "shimmering-spark",
+                        // --- Intermedios ---
+                        "Espadón": "b-f-sword",
+                        "Martillo de Caulfield": "caulfields-warhammer",
+                        "Capa de Agilidad": "cloak-of-agility",
+                        "Llamado del Verdugo": "executioners-calling",
+                        "Fragmento de Kircheis": "kircheis-shard",
+                        "Último Suspiro": "last-whisper",
+                        "Cajacuaj": "noonquiver",
+                        "Bacteriófago": "phage",
+                        "Arco Recurvato": "recurve-bow",
+                        "Puñal Serrado": "serrated-dirk",
+                        "Aguijón": "stinger",
+                        "Cetro Vampírico": "vampiric-scepter",
+                        "Fervor": "zeal",
+                        "Capa de Fuego": "bamis-cinder",
+                        "Vestidura de Zarzas": "bramble-vest",
+                        "Catalizador de Eones": "catalyst-of-aeons",
+                        "Cota de Malla": "chain-vest",
+                        "Cinturón de Gigante": "giants-belt",
+                        "Sudario Glacial": "glacial-shroud",
+                        "Sorbehechizos": "hexdrinker",
+                        "Puño de Jaurim": "jaurims-fist",
+                        "Gema de Avivamiento": "kindlegem",
+                        "Capa de Negatrón": "negatron-cloak",
+                        "Hábito del Espectro": "spectres-cowl",
+                        "Protector del Guardián": "wardens-mail",
+                        // --- Botas y Otros ---
+                        "Botas de Dinamismo": "boots-of-dynamism",
+                        "Botas de Maná": "boots-of-mana",
+                        "Botas Voraces": "gluttonous-greaves",
+                        "Botas de Velocidad": "boots-of-speed",
+                        "Encantamiento Fajín": "quicksilver",
+                        "Encantamiento de Gárgola": "gargoyle",
+                        "Encantamiento de Gloria": "glorious",
+                        "Encantamiento Magnetrón": "magnetron",
+                        "Encantamiento de Meteoro": "meteor",
+                        "Encantamiento de Repulsor": "repulsor",
+                        "Encantamiento de Velo": "veil",
+                        "Terminus": "terminus",
+                        "Corazón de Acero": "heartsteel",
+                        "Lanza de Shojin": "spear-of-shojin",
+                        "Hidra Titánica": "titanic-hydra",
+                        "Guantelete Nacido del Hielo": "iceborn-gauntlet",
+                        "Final del Ingenio": "wits-end"
+                    };
+
+                    listContainer.innerHTML = items.map(item => {
+                        const slug = nameMap[item.nombre] || item.nombre.toLowerCase().replace(/ /g, '-');
+                        const imgUrl = \`https://www.wildriftfire.com/images/items/\${slug}.png\`;
+                        
+                        return \`
+                            <div class="item-card">
+                                <img src="\${imgUrl}" alt="Icono de \${item.nombre}" class="item-img" onerror="this.src='/items.png'">
+                                <div class="item-name">#\${item.id} \${item.nombre}</div>
+                                <div class="item-type">\${item.tipo} - \${item.tier}</div>
+                                <div class="item-cost">
+                                    <i class="fa-solid fa-coins gold-icon"></i> \${item.costo || 0}
+                                </div>
+                                <div class="item-attr">\${item.atributos.join('<br>')}</div>
+                                <div style="font-size: 0.75rem; color: #a09b8c; border-top: 1px solid #1c2636; margin-top: 8px; padding-top: 5px; width: 100%; text-align: left;">
+                                    <strong>P:</strong> \${item.descripcion.pasiva}
+                                    \${item.descripcion.activa && item.descripcion.activa !== 'No tiene.' && item.descripcion.activa !== 'No tiene' ? 
+                                        \`<br><strong style="color: #0ac8b9">A:</strong> \${item.descripcion.activa}\` : ''}
+                                </div>
+                            </div>
+                        \`;
+                    }).join('');
+                }
+
+                function filterObjects() {
+                    const searchTerm = document.getElementById('objectSearchInput').value.toLowerCase().trim();
+                    const filtered = allObjects.filter(item => {
+                        const matchesName = item.nombre.toLowerCase().includes(searchTerm);
+                        const matchesCategory = currentCategory === 'all' || item.tipo === currentCategory;
+                        return matchesName && matchesCategory;
+                    });
+                    renderObjects(filtered);
+                }
+
                 window.onclick = function(event) {
                     if (event.target.className === 'modal') {
                         event.target.style.display = 'none';
@@ -554,9 +922,9 @@ app.get('/champions', async (req, res) => {
     }
 });
 
-app.post('/champions', async (req, res) => {
+app.post("/champions", async (req, res) => {
     try {
-        const activeCollection = await connectToDB();
+        const { champions: activeCollection } = await connectToDB();
 
         // Obtener el ID más alto para autoincrementar
         let nextId = 1;
@@ -572,8 +940,8 @@ app.post('/champions', async (req, res) => {
             id: nextId,
             nombre: req.body.nombre,
             damage: parseInt(req.body.damage) || 0,
-            tipo: req.body.tipo || '',
-            posicion: req.body.posicion || '',
+            tipo: req.body.tipo || "",
+            posicion: req.body.posicion || "",
             descripcion: req.body.descripcion
         };
 
@@ -583,21 +951,23 @@ app.post('/champions', async (req, res) => {
             fallbackChampions.push(newChamp);
             // Intentar guardar en el JSON local para persistencia en modo mock
             try {
-                fs.writeFileSync(path.join(__dirname, 'champions.json'), JSON.stringify(fallbackChampions, null, 4));
+                fs.writeFileSync(path.join(__dirname, "champions.json"), JSON.stringify(fallbackChampions, null, 4));
             } catch (e) { console.error("Error saving to local JSON:", e); }
         }
 
-        res.redirect('/champions?success=true');
+        res.redirect("/champions?success=true");
     } catch (error) {
         console.error("Error creating champion:", error);
         res.status(500).send("Error al crear el campeón");
     }
 });
 
-app.post('/champions/delete/:id', async (req, res) => {
+app.post("/champions/delete/:id", async (req, res) => {
     try {
-        const id = parseInt(req.params.id);
-        const activeCollection = await connectToDB();
+        const idParam = req.params.id;
+        console.log(`[DEBUG] Attempting to delete champion with ID: ${idParam}`);
+        const id = parseInt(idParam);
+        const { champions: activeCollection } = await connectToDB();
 
         if (activeCollection) {
             const query = ObjectId.isValid(req.params.id) ? { _id: new ObjectId(req.params.id) } : { id: parseInt(req.params.id) || req.params.id };
@@ -605,24 +975,25 @@ app.post('/champions/delete/:id', async (req, res) => {
         } else {
             fallbackChampions = fallbackChampions.filter(c => c.id !== id);
             try {
-                fs.writeFileSync(path.join(__dirname, 'champions.json'), JSON.stringify(fallbackChampions, null, 4));
+                fs.writeFileSync(path.join(__dirname, "champions.json"), JSON.stringify(fallbackChampions, null, 4));
             } catch (e) { console.error("Error updating local JSON after delete:", e); }
         }
-        res.redirect('/champions?success=true');
+        res.redirect("/champions?success=true");
     } catch (error) {
+        console.error("Delete error:", error);
         res.status(500).send("Error al eliminar");
     }
 });
 
-app.post('/champions/edit/:id', async (req, res) => {
+app.post("/champions/edit/:id", async (req, res) => {
     try {
         const idParam = req.params.id;
-        const activeCollection = await connectToDB();
+        const { champions: activeCollection } = await connectToDB();
         const updatedData = {
             nombre: req.body.nombre,
             damage: parseInt(req.body.damage) || 0,
-            tipo: req.body.tipo || '',
-            posicion: req.body.posicion || '',
+            tipo: req.body.tipo || "",
+            posicion: req.body.posicion || "",
             descripcion: req.body.descripcion
         };
 
@@ -641,18 +1012,36 @@ app.post('/champions/edit/:id', async (req, res) => {
             if (index !== -1) {
                 fallbackChampions[index] = { ...fallbackChampions[index], ...updatedData };
                 try {
-                    fs.writeFileSync(path.join(__dirname, 'champions.json'), JSON.stringify(fallbackChampions, null, 4));
+                    fs.writeFileSync(path.join(__dirname, "champions.json"), JSON.stringify(fallbackChampions, null, 4));
                 } catch (e) { console.error("Error updating local JSON after edit:", e); }
             }
         }
-        res.redirect('/champions?success=true');
+        res.redirect("/champions?success=true");
     } catch (error) {
         console.error("Edit error:", error);
         res.status(500).send("Error al editar");
     }
 });
 
-app.get('/', (req, res) => res.redirect('/champions'));
+// Nuevo endpoint para obtener los objetos
+app.get("/items", async (req, res) => {
+    try {
+        const { objects: activeCollection } = await connectToDB();
+        if (activeCollection) {
+            const items = await activeCollection.find().sort({ id: 1 }).toArray();
+            res.json(items);
+        } else {
+            // Fallback si no hay conexión a DB
+            const data = fs.readFileSync(path.join(__dirname, "objetos.json"), "utf8");
+            res.json(JSON.parse(data).map((item, i) => ({ id: i + 1, ...item })));
+        }
+    } catch (error) {
+        console.error("Fetch items error:", error);
+        res.status(500).json({ error: "Error al cargar objetos" });
+    }
+});
+
+app.get("/", (req, res) => res.redirect("/champions"));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
     connectToDB(); // Intento de conexión inicial silencioso

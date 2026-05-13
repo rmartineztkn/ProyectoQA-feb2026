@@ -1,18 +1,18 @@
-const fs = require('fs');
-const { MongoClient } = require('mongodb');
+const fs = require("fs");
+const { MongoClient } = require("mongodb");
 
 // Configuration
-const url = 'mongodb://localhost:27017';
-const dbName = 'Proyecto-Wildrift';
-const collectionName = 'champions';
-const sourceFile = 'champions.json';
+const url = "mongodb://localhost:27017";
+const dbName = "Proyecto-Wildrift";
+const collectionName = "champions";
+const sourceFile = "champions.json";
 
 async function importData() {
     const client = new MongoClient(url);
 
     try {
         console.log(`Reading ${sourceFile}...`);
-        const data = fs.readFileSync(sourceFile, 'utf8');
+        const data = fs.readFileSync(sourceFile, "utf8");
 
         // The file is now a VALID JSON array, so we don't need to wrap it.
         let champions;
@@ -44,7 +44,7 @@ async function importData() {
             await collection.drop();
             console.log("Coleccion anterior eliminada para una importacion limpia.");
         } catch (error) {
-            if (error.codeName !== 'NamespaceNotFound') {
+            if (error.codeName !== "NamespaceNotFound") {
                 throw error;
             }
         }
